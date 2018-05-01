@@ -47,7 +47,7 @@
 #    auth_methods: %w(password)
 #  }
 
-server ‘34.217.109.64’, user: ‘ubuntu’, roles: %w{web app db}
+server '34.217.109.64', user: 'ubuntu', roles: %w{web app db}
 set :ssh_options, { forward_agent: true }
 
 # The server-based syntax can be used to override options:

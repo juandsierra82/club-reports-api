@@ -61,11 +61,13 @@ GEM
       dotenv (= 2.4.0)
       railties (>= 3.2, < 6.0)
     erubi (1.7.1)
+    execjs (2.7.0)
     ffi (1.9.23)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
+    libv8 (3.16.14.19)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -118,6 +120,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    ref (2.0.0)
     ruby_dep (1.5.0)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -134,6 +137,9 @@ GEM
     sshkit (1.13.1)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    therubyracer (0.12.3)
+      libv8 (~> 3.16.14.15)
+      ref
     thor (0.20.0)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
@@ -151,6 +157,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   dotenv-rails
+  execjs
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.18.4)
   puma (~> 3.7)
@@ -158,6 +165,7 @@ DEPENDENCIES
   rails (~> 5.1.6)
   spring
   spring-watcher-listen (~> 2.0.0)
+  therubyracer
   tzinfo-data
 
 BUNDLED WITH
