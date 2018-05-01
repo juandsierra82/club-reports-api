@@ -57,6 +57,10 @@ GEM
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    capistrano3-puma (3.1.0)
+      capistrano (~> 3.7)
+      capistrano-bundler
+      puma (~> 3.4)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     dotenv (2.4.0)
@@ -160,6 +164,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rvm
+  capistrano3-puma
   dotenv-rails
   execjs
   listen (>= 3.0.5, < 3.2)

@@ -20,6 +20,7 @@ gem 'capistrano-bundler'
 gem "therubyracer"
 gem "execjs"
 gem 'capistrano-rvm'
+gem 'capistrano3-puma'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
