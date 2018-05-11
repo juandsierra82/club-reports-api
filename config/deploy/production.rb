@@ -31,6 +31,7 @@
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
+set :stage, :production
 
 
 # Custom SSH Options
@@ -46,11 +47,25 @@
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }
+set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
+
 
 server '34.217.109.64', user: 'ubuntu', roles: %w{web app db}
 set :ssh_options, { forward_agent: true }
 set :rails_env, :production
 
+set :enable_ssl, false
+set :puma_workers,    2
+
+
+set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
+set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
+set :puma_pid,        "#{shared_path}/tmp/pids/puma.pid"
+set :puma_access_log, "#{release_path}/log/puma.error.log"
+set :puma_error_log,  "#{release_path}/log/puma.access.log"
+set :puma_preload_app, true
+set :puma_worker_timeout, nil
+set :puma_init_active_record, false  # Change to true if using
 # The server-based syntax can be used to override options:
 # ------------------------------------
 # server "example.com",
